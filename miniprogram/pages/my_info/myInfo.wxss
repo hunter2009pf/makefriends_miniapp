@@ -1,0 +1,26 @@
+/* pages/my_info/myInfo.wxss */
+/* 纵向布局 */
+.column{
+  height: 200rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+  /* 上下居中 */
+  /* justify-content: center; */
+  /* 左右居中 */
+  align-items: flex-start;
+  margin-left: 16rpx;
+}
+
+.basicInfo{
+  margin-left: 48.rpx;
+  margin-right: 48.rpx;
+  height: 800rpx;
+  background-color: lightgreen; 
+  border-radius: 16rpx; 
+  padding: 16rpx;
+}
+
+.submitBtn{
+  margin-top: 48rpx;
+}

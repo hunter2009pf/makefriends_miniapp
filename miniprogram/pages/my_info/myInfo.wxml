@@ -1,0 +1,99 @@
+<!--pages/my_info/myInfo.wxml-->
+
+<scroll-view class="container" scroll-y="true" enable-flex="true">
+<view class="basicInfo">
+  <view class="column">
+      <input id='name'  disabled="{{disabled}}"  name="uname" placeholder='请输入昵称' placeholder-class='name' bindtap="modifyNickName" value="{{name}}" bindinput="userNameInputAction"></input>
+
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{genderList}}">
+    <view class="picker">
+      *性别：{{genderList[index]}}
+    </view>
+  </picker>
+
+  <!--age selection-->
+  <picker bindchange="bindAgeChange" value="{{ageIndex}}" range="{{ageList}}">
+    <view class="picker">
+      出生年份：{{ageList[ageIndex]}}
+    </view>
+  </picker>
+
+  <!--height selection-->
+  <picker bindchange="bindHeightChange" value="{{heightIndex}}" range="{{heightList}}">
+    <view class="picker">
+      身高（厘米）：{{heightList[heightIndex]}}
+    </view>
+  </picker>
+
+  <!--weight selection-->
+  <picker bindchange="bindWeightChange" value="{{weightIndex}}" range="{{weightList}}">
+    <view class="picker">
+      体重（公斤）：{{weightList[weightIndex]}}
+    </view>
+  </picker>
+
+  <!--star selection-->
+  <picker bindchange="bindStarChange" value="{{starIndex}}" range="{{starList}}">
+    <view class="picker">
+      星座：{{starList[starIndex]}}
+    </view>
+  </picker>
+
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      户籍地址：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+
+  <picker mode="region" bindchange="bindCurrentPlaceChange" value="{{currentPlace}}" custom-item="{{customItem}}">
+    <view class="picker">
+      现居地：{{currentPlace[0]}}，{{currentPlace[1]}}，{{currentPlace[2]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindMarriageChange" value="{{marryIndex}}" range="{{marryList}}">
+    <view class="picker">
+      婚姻状况：{{marryList[marryIndex]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindEducationChange" value="{{eduIndex}}" range="{{eduList}}">
+    <view class="picker">
+      学历：{{eduList[eduIndex]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindJobChange" value="{{jobIndex}}" range="{{jobList}}">
+    <view class="picker">
+      职业：{{jobList[jobIndex]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindSalaryChange" value="{{salaryIndex}}" range="{{salaryList}}">
+    <view class="picker">
+      月收入：{{salaryList[salaryIndex]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindLiveChange" value="{{liveIndex}}" range="{{liveList}}">
+    <view class="picker">
+      住房状况：{{liveList[liveIndex]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindCarChange" value="{{carIndex}}" range="{{carList}}">
+    <view class="picker">
+      车辆状况：{{carList[carIndex]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindUniqueChildChange" value="{{uniqueChildIndex}}" range="{{uniqueChildList}}">
+    <view class="picker">
+      独生子女：{{uniqueChildList[uniqueChildIndex]}}
+    </view>
+  </picker>
+
+  </view>
+</view>
+<button class="submitBtn" bindtap="submitMyInfo">保存</button>
+</scroll-view>

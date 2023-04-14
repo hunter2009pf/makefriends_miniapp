@@ -1,0 +1,3 @@
+<!-- <view class="hear_card_panel">{{cardData}}</view> -->
+<!-- <view class="hear_card_panel" bindtap="onClickPicture">{{cardData}}</view> -->
+<image class="hear_card_panel" src="{{cardData.avatarUrl == ''? (host + cardData.photos[0]) : (host + cardData.avatarUrl)}}" bindtap="onClickPicture"></image>

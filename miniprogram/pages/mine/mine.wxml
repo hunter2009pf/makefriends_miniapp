@@ -1,0 +1,44 @@
+<!--pages/mine/mine.wxml-->
+<scroll-view class="container" scroll-y="true" enable-flex="true">
+  <view class="row">
+    <image class="avatar" src="{{person.avatarUrl == ''? defaultAvatar : (host + person.avatarUrl)}}" bindtap="updateAvatar" />
+    <view class="column">
+      <text class="user-name">{{person.name}}</text>
+      <text class="user-level">{{user.isVip? "VIP用户" : "普通用户"}}</text>
+    </view>
+    <view class="autoFullWidth"></view>
+    <text class="user-info-edit" bindtap="navigateToEdit">编辑</text>
+  </view>
+  <view class="statsRow">
+    <view class="stats">
+      <view class="idols">我关注的</view>
+      <view class="count">{{user.idolList.length}}</view>
+    </view>
+    <view class="stats">
+      <view class="fans">关注我的</view>
+      <view class="count">{{user.fanList.length}}</view>
+    </view>
+  </view>
+  <view class="basicInfo">
+    <view class="row">
+      <view class="column">
+        <view>身高：{{person.height}}cm</view>
+        <view>户籍地：{{person.birthPlace}}</view>
+      </view>
+      <view class="rightColumn">
+        <view>体重：{{person.weight}}kg</view>
+        <view>现居地：{{person.currentPlace}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="imageRaw">
+    <view wx:for="{{person.photos}}" wx:key="index" data-index="{{index}}"  wx:for-index="index" class="imageWrapper" bindlongpress="deleteImage">
+      <image src="{{host + item}}" mode="aspectFit" class="image" />
+    </view>
+    <image wx:if="{{person.photos.length < 6}}" src="/assets/img_add.png" class="imageWrapper" bindtap="chooseImage"/>
+  </view>
+  <view class="logout" bindtap="logout">
+    <text>退出登录</text>
+  </view>
+</scroll-view>
+
